@@ -85,6 +85,13 @@ void dfree(did_t d);
 #endif
 ```
 
+## Todo
+ - replace documentation above with more concise form
+ - maybe create a `did_t dmalloc(size_t bytes)` function
+ - add test code, examples code, and makefile
+ - add wake
+ - add doxygen
+
 ## Contributors
 Shaumik Ashraf
 
