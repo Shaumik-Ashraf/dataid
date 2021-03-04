@@ -17,18 +17,19 @@ static void* str(const char* s) {
 	return(ret);
 }
 
-
 int main(void) {
 	
 	int map[3][2]; //map where [i][0] is key, [i][1] is value
 	int i;
 	
-	
 	//intialize dataid system
+	printf("initializing system\n");
+	dset_capacity(10, 0);
 	dinit(NULL);
-	
+
 	
 	//set initialized values into dataid system, while assigning them to map
+	printf("setting map\n");
 	map[0][0] = dset(str("red"));
 	map[0][1] = dset(str("apple"));
 	
@@ -37,14 +38,16 @@ int main(void) {
 
 	map[2][0] = dset(str("blue"));
 	map[2][1] = dset(str("blueberry"));
-	
+
 	
 	//get values to print them
+	printf("printing map\n");
 	for(i=0; i<3; i++) {
-		printf("%s => %s\n", dget(map[i][0]), dget(map[i][0]));
+		printf("\t%s => %s\n", dget(map[i][0]), dget(map[i][1]));
 	}
+
 	
-	
+	printf("done!\n");
 	//dataid automatically free's memory on return;
 	return(0);
 }
