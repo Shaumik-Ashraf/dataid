@@ -34,8 +34,14 @@ void dinit(void (*error_handler)(const char* error_msg));
 
 
 //specify the capacity for dataid system
-//THIS MUST BE CALLED BEFORE dinit()
-//@param n - maximum number of 
+//IF THIS FUNCTION IS CALLED, IT MUST BE BEFORE dinit()
+//@param n - maximum number of pointers to store in dataid system
+//		by default, if this value is exceeded, the system will reallocate
+//@param immutable_flag - if this value is set to true, dataid system will
+//		call error handler, which by default exits the program.
+//NOTE: the array is still allocated on heap regardless of immutable_flag
+//NOTE: if the error handler doesn't exit, the dataid array will still reallocate
+//		this feature is intended for optimization without crashing the code
 void dset_capacity(size_t n, char immutable_flag);
 
 
@@ -78,6 +84,13 @@ void dfree(did_t d);
 
 #endif
 ```
+
+## Todo
+ - replace documentation above with more concise form
+ - maybe create a `did_t dmalloc(size_t bytes)` function
+ - add test code, examples code, and makefile
+ - add wake
+ - add doxygen
 
 ## Contributors
 Shaumik Ashraf
