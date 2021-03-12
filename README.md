@@ -11,7 +11,7 @@ structure. The dataid system also implements automatic
 garbage collection, bounds checking, and error handling 
 customization.
  
-Built on C99 and is cross platform (well, as X-platform as C99)
+Built on C99 and is cross platform (well, as X-platform as C99).
 
 ## Usage
  - Download this repository
@@ -86,7 +86,6 @@ void* dremove(did_t d);
 //@param d - data id to free
 void dfree(did_t d);
 
-#endif
 ```
 
 ## Todo
