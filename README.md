@@ -60,7 +60,7 @@ void* dget(did_t d);
 ```
 
 ```c
-//removes data from dataid system (it WILL not be free'd and dget() will no longer work on it)
+//removes data from dataid system (it will NOT be free'd and dget() will no longer work on it)
 void* dremove(did_t d);
 ```
 
