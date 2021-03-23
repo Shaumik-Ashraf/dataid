@@ -1,6 +1,8 @@
 //test.c
 //testing code for dataid
 
+/** WORK IN PROGRESS */
+
 #include<stdio.h>
 #include<assert.h>
 
@@ -11,12 +13,25 @@ int main(void) {
 	printf("==========testing dataid=============\n");
 	printf("(If the program aborts, test fails...)\n");
 	
-	printf("ptr size: %d\n",   sizeof(void*));
-	printf("int size: %d\n",   sizeof(int));
-	printf("uint size: %d\n",  sizeof(unsigned int));
-	printf("long size: %d\n",  sizeof(long int));
-	printf("ulong size: %d\n", sizeof(unsigned long int));
-	printf("ull size: %d\n", sizeof(unsigned long long int));
+	dinit(NULL);
+	
+	float* pi;
+	char* song;
+	const char* literal_song = "Twinkle twinkle little star\n"
+	int d1, d2;
+	
+	pi = malloc(sizeof(float));
+	assert(pi);
+	
+	song = malloc( (strlen(literal_song)+1) * sizeof(char) );
+	assert(song);
+	strcpy(song, literal_song);
+	
+	d1 = dset(pi)
+	assert(dget(d1));
+	assert(dget(d1)==pi);
+	*(dget(d1)) = d1;
+	assert(*dget(d1) == 3.14);
 	
 /*
 	dinit(void (*error_handler)(const char* error_msg));
